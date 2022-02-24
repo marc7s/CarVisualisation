@@ -99,8 +99,7 @@ function getCellIfExists(cell){
 function calcCam(startPos, velocity){
     let ft = f(startPos, velocity, time);
     document.getElementById('function').innerHTML = 
-        'f(' + startPos + ', ' + velocity + ') = ' + 
-        startPos + ' + ' + velocity + ' * ' + time + ' = ' + ft;
+        `f(${startPos}, ${velocity}, ${time}) = ${startPos} + ${velocity} * ${time} = ${ft}`;
     document.getElementById('time').innerHTML = 'Time: ' + time + 's';
     moveCar(ft);
 }

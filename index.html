@@ -17,8 +17,17 @@
             <span id="time">Time: 0s</span>
         </div>
         <div class="infoContainer">
-            <span id="function">f(s, v) = s + v*t</span>
+            <span id="function">f(s, v, t) = s + v*t</span>
         </div>
         <div id="grid"></div>
+        <div id="explanation">
+            The simulation shows the solution to the following problem:
+            <em>
+                Consider the integer number line. A car starts at an unknown position on the line at time 0, with an unknown constant (integer) velocity. Every second, the car moves according to its velocity to land on a new (or the same if the velocity is 0) number. Every second, you are allowed to pick any number on the line to photograph. Is there an algorithm for which number to photograph that guarantees that the car will be caught on photo?
+            </em>
+            The algorithm works by considering all possible combinations of starting positions and speeds, a finite subset of which are shown here in the grid. It visits the combinations in the circular fashion shown, starting at (0, 0). Each new second, consider the parameters to the function s, v and t where s is the position, v the velocity and t the current time. The function is then 
+            <em>f(s, v, t) = s + v*t</em>
+            The interpretation of this is that if the car would have the starting position s and velocity v, it would at the time t be at position s + v*t. By checking all pairs of s and v, and supplying the current time step as t, the algorithm will if run to infinity be guaranteed to find the car since it takes into account all possible parameters the car could have.
+        </div>
     </body>
 </html>
